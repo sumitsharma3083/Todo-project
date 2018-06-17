@@ -1,0 +1,62 @@
+body
+{
+    margin-top: 40px;
+    font-family: 'IBM Plex Serif', serif;
+    background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #000000, #434343); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #000000, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+h1
+{
+    text-align: center;
+    
+}
+#wrapper
+{
+    margin: 50px;
+    text-align: center;
+}
+table
+{
+   margin: 0 auto;
+    
+}
+#remove
+{
+ text-align: center;
+    
+}
+#remove button
+{
+    background-color: #d34836;
+}
+#wrapper button
+{
+    background-color: #198930;
+}
+.container
+{
+   background: #808080; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #808080, #3fada8); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #808080, #3fada8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 20px;
+    border-radius: 28px 28px 28px 28px;
+-moz-border-radius: 28px 28px 28px 28px;
+-webkit-border-radius: 28px 28px 28px 28px;
+border: 0px solid #000000;
+    border: 1px solid white;
+}
+#result_list
+{
+    background-color: black;
+    color: white;
+    margin-bottom: 20px;
+}
+.myrows td
+{
+    padding: 30px;
+}
+.myrows
+{
+    border: 1px solid white;
+}
