@@ -60,6 +60,7 @@ h1
     text-align: center;
     text-transform: capitalize;
     margin: 5px 0px;
+    padding: 10px;
 }
 .remove_list
 {
@@ -74,6 +75,17 @@ h1
 .remove_list:hover
 {
    background-color: #E71C23;
+}
+.fa-trash-alt
+{
+    color: #E71C23;
+}
+.delBtn
+{
+    background: none;
+    cursor: pointer;
+    border: none;
+    float: right;
 }
 
 
