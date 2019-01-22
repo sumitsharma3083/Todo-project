@@ -1,88 +1,76 @@
-var inputbox = document.getElementById('todo_input');
-var resultbox = document.getElementById('result_list');
+var _userInput = document.getElementById('todo_input')
+var _addBtn    = document.getElementById('addBtn')
 
 
+var _wrapper = document.querySelector('.wrapper')
+var _alltodo  = document.querySelector('.alltodos')
 
- // check whether their is todo list or not
-if(localStorage.getItem('todo')===null)
-   {
-   
-    $('#removebtn').hide();
-   } 
-function dosomething1()
+var _removeBtn = document.querySelector('.remove_list')
+ 
+if(localStorage.getItem('todo') === null)
 {
-    if(inputbox.value != '')
-        {
-           if(localStorage.getItem('todo')===null)
-            {
-            var mylist1 = [];
-            mylist1.push(inputbox.value);
-            localStorage.setItem('todo',JSON.stringify(mylist1));
-            }
-           else
-            {
-        var mylist2= JSON.parse(localStorage.getItem('todo'));
-            mylist2.push(inputbox.value);
-            localStorage.setItem('todo',JSON.stringify(mylist2));
-             }
-    
-            inputbox.value = '';
-            
-        }
-    else
-        {
-            alert('Hey!!! Enter something in the field')
-        }
-
+      _wrapper.style.display = 'none'
 }
+else{
+     JSON.parse(localStorage.getItem('todo')).forEach(todo => {
+             let li = document.createElement('li')
+              li.innerHTML = todo;
+            _alltodo.appendChild(li)
+     });
+}  
 
+class Todo{
+    constructor(input)
+    {
+        this.input = input
+    }
 
+    static AddTodo(data)
+    {
+     if(localStorage.getItem('todo') === null)
+     {
+         var _listOfData = [] 
+         _listOfData.push(data)
+         localStorage.setItem('todo', JSON.stringify(_listOfData))
 
-// the following function is for show the todo
-function showlist()
-{
-   
-     var mylist3= JSON.parse(localStorage.getItem('todo'));
-   
-    for(var i=0 ; i < mylist3.length ; i++ )
-        {
-            
-           
-   resultbox.innerHTML += "<tr class=myrows><td><span class=myspan> "+mylist3[i]+"</span></td></tr>";
-            
-           
-        }
-       $('#showmsg').css('display','none');
-        
- }
-
-//The following function is for removing the todo
-
-function Remove()
-{
+          var li = document.createElement('li')
+          li.innerHTML = data
+          _alltodo.appendChild(li)
+          _wrapper.style.display = 'block'
+     }
+     else
+     {
+         var _getdata = JSON.parse(localStorage.getItem('todo'))
+         _getdata.push(data)
+         localStorage.setItem('todo', JSON.stringify(_getdata))
        
-       localStorage.clear('todo');  
-        $('#result_list').hide(); 
-    $('#remove').fadeOut(1000);
-         
-}
+         var li = document.createElement('li')
+         li.innerHTML = data
+         _alltodo.appendChild(li)
 
-//this function is for delete items from todo
-function dosomething2()
-{   // getting the array from localstorage
-  var mylist=JSON.parse(localStorage.getItem('todo'));
-    
-    
-    
-    //updating the array in the localstorage after deleting the items
-  localStorage.setItem('todo',JSON.stringify(mylist));
-    
-  
-      
+         _wrapper.style.display = 'block'
+     }
+    }
 }
+ 
+_addBtn.addEventListener('click', function(){
+    if(_userInput.value == '')
+    {
+        _userInput.className = 'emptyAlert'
+    }
+    else{
+        Todo.AddTodo(_userInput.value); 
+        _userInput.value = ''
+        _userInput.removeAttribute('class')
+    }
+     
+})
 
-function mycheck()
-{
-    var checklist = document.getElementsByClassName('mycheck');
-}
+_removeBtn.addEventListener('click', ()=>{
+    localStorage.clear();
+    _alltodo.innerHTML = null;
+    _wrapper.style.display = 'none'
+})
 
+
+ 
