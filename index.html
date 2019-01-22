@@ -2,35 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Todo | Project</title>
-    
+    <title>Todo | Project</title>  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="showlist()">
-    
+<body>  
     <div class="container">
-        <h1>ToDO List Project</h1>
-        <div id="wrapper">
-            
-       <input type="text" id="todo_input"> 
-       <button class="btn btn-primary" onclick="dosomething1()">Add In Todo</button>
-        </div>
-        
-        
-        
-        <table id="result_list">
-        
-        </table>
-          
-      
-       <h1 id="showmsg">Your Todo is Empty !!!</h1>
-       <div id="remove"><button class="btn btn-primary" onclick="Remove()" id="removebtn">Remove  List</button></div>
-        
+        <h1>Make Your Todo Here..</h1>  
+        <div class="input-area">
+            <input type="text" id="todo_input"> 
+            <button class="btn btn-primary" id="addBtn">Add In Todo</button>
+    </div>  
     </div>
-    
-    <script src="jquery.js"></script>
+    <div class="wrapper">
+        <ul class="alltodos">
+            
+        </ul>
+        <button class="remove_list">
+            Remove List
+        </button>
+    </div>
     <script src="script.js">
     </script>
 </body>

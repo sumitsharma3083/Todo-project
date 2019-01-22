@@ -1,62 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow");
+
 body
 {
-    margin-top: 40px;
-    font-family: 'IBM Plex Serif', serif;
-    background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #000000, #434343); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #000000, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   margin-top: 40px;
+   font-family: 'PT Sans Narrow', sans-serif !important;
+  background: #000000; /* fallback for old browsers */
+  background: linear-gradient(to left, #000000, #434343);
+}
+.container
+{
+  width: 50%;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px 0px;
+}
+.input-area
+{
+   width: 80%;
+   margin: auto;
+}
+#todo_input
+{
+    width: 100%;
+    display: block;
+}
+.btn-primary
+{
+    display: block;
+    width: 100%;
+    margin: 10px 0px;
 }
 h1
 {
     text-align: center;
     
 }
-#wrapper
+.emptyAlert{
+    border: 1px solid #FF3031;
+}
+
+.wrapper
 {
-    margin: 50px;
+    width: 50%;
+   margin: auto;
+   padding: 20px 0px; 
+}
+.alltodos 
+{
+    width: 100%;
+    list-style-type: none;
+    display: block;
+    padding: 0;
+
+}
+.alltodos li{
+    display: block;
+    width: 100%;
+    background-color: #fff;
     text-align: center;
+    text-transform: capitalize;
+    margin: 5px 0px;
 }
-table
+.remove_list
 {
-   margin: 0 auto;
-    
+    display: block;
+    width: 100%;
+   background-color: #D63031;
+   cursor: pointer;
+   border: none;
+   color: #fff;
+   transition: all 0.5s;
 }
-#remove
+.remove_list:hover
 {
- text-align: center;
-    
+   background-color: #E71C23;
 }
-#remove button
-{
-    background-color: #d34836;
-}
-#wrapper button
-{
-    background-color: #198930;
-}
-.container
-{
-   background: #808080; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #808080, #3fada8); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #808080, #3fada8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding: 20px;
-    border-radius: 28px 28px 28px 28px;
--moz-border-radius: 28px 28px 28px 28px;
--webkit-border-radius: 28px 28px 28px 28px;
-border: 0px solid #000000;
-    border: 1px solid white;
-}
-#result_list
-{
-    background-color: black;
-    color: white;
-    margin-bottom: 20px;
-}
-.myrows td
-{
-    padding: 30px;
-}
-.myrows
-{
-    border: 1px solid white;
+
+
+@media(max-width: 700px){
+ .container
+ {
+     margin-top: 100px;
+ }
+ .container h1{
+     font-size: 20px;
+ }
 }
